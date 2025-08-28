@@ -16,11 +16,14 @@ library(tidyverse)
 # palettes: https://coolors.co/palettes/popular/5%20colors
 
 #Sunny Beach Day
-colors <- c("#264653","#2a9d8f","#e9c46a","#f4a261","#e76f51")
+# colors <- c("#264653","#2a9d8f","#e9c46a","#f4a261","#e76f51")
 # #Sunrise Glow
 # colors <- c("#233d4d","#fe7f2d","#fcca46","#a1c181","#619b8a")
 # Ocean Breeze
 # colors <- c("#031d44","#04395e","#70a288","#dab785","#d5896f")
+# modified Ocean Breeze
+colors <- c("#010b17","#155e75","#70a288","#dab785","#d5896f")
+
 # Coastal Vibes
 # colors <- c("#160f29","#246a73","#368f8b","#f3dfc1","#ddbea8")
 # #Ocean Serenity
@@ -29,6 +32,8 @@ colors <- c("#264653","#2a9d8f","#e9c46a","#f4a261","#e76f51")
 # colors <- c("#8ecae6","#219ebc","#023047","#ffb703","#fb8500")
 # Earthy Forest Hues
 # colors <- c("#dad7cd","#a3b18a","#588157","#3a5a40","#344e41")
+# modified Earthy Forest Hues
+# colors <- c("#dad7cd","#a3b18a","#588157","#2f5d47","#132c24")
 # Silent Waters
 # colors <- c("#e0fbfc","#c2dfe3","#9db4c0","#5c6b73","#253237")
 # Forest Green Tones
@@ -91,11 +96,11 @@ gauss_basis <- sapply(seq_along(mus),
 # coefs to apply to basis funcs --------------------------------------------
 
 coefs <- matrix(c(
-   0.0,   0.0,  0.3,  1.6,  0.0, 0.0, # bottom - dark blue
-   0.0,   0.4, -0.5, -2.8,  0.0, 0.0, # 2nd up - light blue
-   0.0,   0.0,  3.0, -0.1,  0.0, 0.0, # 3rd up - yellow
-   0.0,   0.0,  0.0,  0.3,  2.0, 0.0, # 4th up - orange
-   0.0,   0.0, -0.3, -1.7,  0.6, 0.0), # top - red
+  0.0,   0.0,  0.3,  1.6,  0.0, 0.0, # bottom - dark blue
+  0.0,   0.4, -0.5, -2.8,  0.0, 0.0, # 2nd up - light blue
+  0.0,   0.0,  3.0, -0.1,  0.0, 0.0, # 3rd up - yellow
+  0.0,   0.0,  0.0,  0.3,  2.0, 0.0, # 4th up - orange
+  0.0,   0.0, -0.3, -1.7,  0.6, 0.0), # top - red
   nrow = 5, byrow = TRUE)
 
 # Wiggle amplitude
@@ -146,7 +151,7 @@ dat <- do.call(rbind, lapply(1:5, function(i) {
 #   dplyr::ungroup() %>%
 #   dplyr::arrange(id) %>% 
 #   dplyr::filter(x <= 0.9)
-           
+
 
 #add trailing values
 tnum <- seq(1, 1.4, length.out = 10)
@@ -166,7 +171,7 @@ dat2 <- rbind(dat,
   dplyr::arrange(x) %>%
   dplyr::ungroup() %>%
   dplyr::arrange(id) #%>%
-  # dplyr::filter(x > 0.03)
+# dplyr::filter(x > 0.03)
 
 
 # plot --------------------------------------------------------------------
