@@ -1,2 +1,3 @@
 # lab_logo
-Youngflesh Lab logo from basis functions
+
+Code generate logo for the Youngflesh Lab using basis functions
